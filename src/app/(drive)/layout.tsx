@@ -1,7 +1,10 @@
-import React from "react";
+import { SidebarProvider } from '@/providers/sidebar-provider';
+import { ThemeProvider } from '@/providers/theme-provider';
 
-const layout = () => {
-  return <div>layout</div>;
-};
-
-export default layout;
+export default async function layout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <SidebarProvider>{children}</SidebarProvider>
+    </ThemeProvider>
+  );
+}
