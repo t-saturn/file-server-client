@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
 @import "tailwindcss";
 
 :root {
@@ -10,17 +12,113 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --font-primary: "Inter";
+  --font-text: "Poppins";
+  --font-special: "Montserrat";
+  --font-code: "Victor Mono";
+
+  --color-c-rosewater: var(--c-rosewater);
+  --color-c-flamingo: var(--c-flamingo);
+  --color-c-pink: var(--c-pink);
+  --color-c-mauve: var(--c-mauve);
+  --color-c-red: var(--c-red);
+  --color-c-maroon: var(--c-maroon);
+  --color-c-peach: var(--c-peach);
+  --color-c-yellow: var(--c-yellow);
+  --color-c-green: var(--c-green);
+  --color-c-teal: var(--c-teal);
+  --color-c-sky: var(--c-sky);
+  --color-c-sapphire: var(--c-sapphire);
+  --color-c-blue: var(--c-blue);
+  --color-c-lavender: var(--c-lavender);
+
+  --color-c-text: var(--c-text);
+  --color-c-subtext1: var(--c-subtext1);
+  --color-c-subtext0: var(--c-subtext0);
+  --color-c-overlay2: var(--c-overlay2);
+  --color-c-overlay1: var(--c-overlay1);
+  --color-c-overlay0: var(--c-overlay0);
+  --color-c-surface2: var(--c-surface2);
+  --color-c-surface1: var(--c-surface1);
+  --color-c-surface0: var(--c-surface0);
+  --color-c-base: var(--c-base);
+  --color-c-mantle: var(--c-mantle);
+  --color-c-crust: var(--c-crust);
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-  }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    --c-rosewater: #dc8a78;
+    --c-flamingo: #dd7878;
+    --c-pink: #ea76cb;
+    --c-mauve: #8839ef;
+    --c-red: #d20f39;
+    --c-maroon: #e64553;
+    --c-peach: #fe640b;
+    --c-yellow: #df8e1d;
+    --c-green: #40a02b;
+    --c-teal: #179299;
+    --c-sky: #04a5e5;
+    --c-sapphire: #209fb5;
+    --c-blue: #1e66f5;
+    --c-lavender: #7287fd;
+
+    --c-text: #4c4f69;
+    --c-subtext1: #5c5f77;
+    --c-subtext0: #6c6f85;
+    --c-overlay2: #7c7f93;
+    --c-overlay1: #8c8fa1;
+    --c-overlay0: #9ca0b0;
+    --c-surface2: #acb0be;
+    --c-surface1: #bcc0cc;
+    --c-surface0: #ccd0da;
+    --c-base: #eff1f5;
+    --c-mantle: #e6e9ef;
+    --c-crust: #dce0e8;
+  }
+
+  .dark {
+    --c-rosewater: #e05c75;
+    --c-flamingo: #e06c75;
+    --c-pink: #c678dd;
+    --c-mauve: #a85de9;
+    --c-red: #e06c75;
+    --c-maroon: #be5046;
+    --c-peach: #d19a66;
+    --c-yellow: #e5c07b;
+    --c-green: #98c379;
+    --c-teal: #56b6c2;
+    --c-sky: #61afef;
+    --c-sapphire: #528bff;
+    --c-blue: #61afef;
+    --c-lavender: #b8caff;
+
+    --c-text: #abb2bf;
+    --c-subtext1: #9da5b4;
+    --c-subtext0: #888e9c;
+    --c-overlay2: #7f848e;
+    --c-overlay1: #5c6370;
+    --c-overlay0: #4b5263;
+    --c-surface2: #3b4048;
+    --c-surface1: #2c313a;
+    --c-surface0: #21252b;
+    --c-base: #1e2127;
+    --c-mantle: #181a1f;
+    --c-crust: #141619;
+  }
 }
