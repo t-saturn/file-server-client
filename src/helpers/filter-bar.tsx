@@ -1,27 +1,26 @@
 'use client';
 
-import { ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { IconSelectButton } from '@/components/custom/IconSelectButton';
+import type { IconNode } from 'lucide-react';
 
-export function FilterBar() {
+type OptionGroup = {
+  key: string;
+  label: string;
+  icon: IconNode;
+  options: { key: string; label: string; icon?: IconNode }[];
+};
+
+interface FilterBarProps {
+  options: OptionGroup[];
+  onSelect: (selection: { key: string; option_selected: string }) => void;
+}
+
+export const FilterBar = ({ options, onSelect }: FilterBarProps) => {
   return (
-    <div className="flex gap-4 mb-6">
-      <Button variant="outline" className="gap-2">
-        Tipo
-        <ChevronDown className="w-4 h-4" />
-      </Button>
-      <Button variant="outline" className="gap-2">
-        Personas
-        <ChevronDown className="w-4 h-4" />
-      </Button>
-      <Button variant="outline" className="gap-2">
-        Modificado
-        <ChevronDown className="w-4 h-4" />
-      </Button>
-      <Button variant="outline" className="gap-2">
-        Ubicación
-        <ChevronDown className="w-4 h-4" />
-      </Button>
+    <div className="flex flex-row gap-4 justify-center items-center">
+      {options.map((group) => (
+        <IconSelectButton key={group.key} config={group} onSelect={onSelect} />
+      ))}
     </div>
   );
-}
+};
