@@ -3,7 +3,7 @@
 import { MainContent } from '@/components/main-content';
 
 const Page = () => {
-  return <MainContent currentView="quota" />;
+  return <MainContent currentView="trash" />;
 };
 
 export default Page;

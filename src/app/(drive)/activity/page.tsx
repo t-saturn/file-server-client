@@ -1,7 +1,9 @@
-import React from "react";
+'use client';
 
-const page = () => {
-  return <div>page</div>;
+import { MainContent } from '@/components/main-content';
+
+const Page = () => {
+  return <MainContent currentView="activity" />;
 };
 
-export default page;
+export default Page;

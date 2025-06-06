@@ -3,7 +3,7 @@
 import { MainContent } from '@/components/main-content';
 
 const Page = () => {
-  return <MainContent currentView="quota" />;
+  return <MainContent currentView="my-drive" />;
 };
 
 export default Page;
