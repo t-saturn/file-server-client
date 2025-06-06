@@ -24,7 +24,7 @@ export function Sidebar() {
   ];
 
   return (
-    <div className="w-64 bg-white border-r border-gray-200 flex flex-col">
+    <div className="w-64 flex flex-col">
       <div className="p-4">
         <Button className="w-full justify-start gap-3 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-full h-12">
           <Plus className="w-5 h-5" />

@@ -26,5 +26,5 @@ export function MainContent({ currentView }: MainContentProps) {
     }
   };
 
-  return <div className="flex-1 overflow-auto">{renderView()}</div>;
+  return <div className="flex-1 overflow-auto bg-cbase rounded-lg">{renderView()}</div>;
 }

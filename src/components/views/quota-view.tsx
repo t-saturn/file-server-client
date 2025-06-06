@@ -21,15 +21,15 @@ export function QuotaView() {
         <div className="flex gap-6 text-sm">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <span>Google Drive</span>
+            <span>PDF</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-            <span>Google Fotos</span>
+            <span>docx</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            <span>Gmail</span>
+            <span>xslx</span>
           </div>
         </div>
       </div>

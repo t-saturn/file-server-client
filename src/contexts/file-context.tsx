@@ -2,7 +2,7 @@
 
 import { createContext, useContext, type ReactNode } from 'react';
 
-interface FileItem {
+export interface FileItem {
   id: string;
   name: string;
   type: string;
