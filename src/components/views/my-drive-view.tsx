@@ -1,10 +1,34 @@
 'use client';
 
-import { FilterBar } from '@/helpers/filter-bar';
 import { ViewToggle } from '@/providers/view-toogle';
 import { useState } from 'react';
 import { FileGrid } from '../file/file-grid';
 import { FileList } from '../file/file-list';
+import { Button } from '@/components/ui/button';
+import { ChevronDown } from 'lucide-react';
+
+export function FilterBar() {
+  return (
+    <div className="flex gap-4 mb-6">
+      <Button variant="outline" className="gap-2">
+        Tipo
+        <ChevronDown className="w-4 h-4" />
+      </Button>
+      <Button variant="outline" className="gap-2">
+        Personas
+        <ChevronDown className="w-4 h-4" />
+      </Button>
+      <Button variant="outline" className="gap-2">
+        Modificado
+        <ChevronDown className="w-4 h-4" />
+      </Button>
+      <Button variant="outline" className="gap-2">
+        Ubicación
+        <ChevronDown className="w-4 h-4" />
+      </Button>
+    </div>
+  );
+}
 
 export function MyDriveView() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('list');
