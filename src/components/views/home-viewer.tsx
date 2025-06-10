@@ -45,7 +45,7 @@ export function HomeView() {
       <FilterBar options={optionGroups} onSelect={setSelected} />
 
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-lg font-medium text-gray-900">Archivos sugeridos</h2>
+        <h2 className="text-lg font-medium text-csubtext1">Archivos sugeridos</h2>
         <ViewToggle viewMode={viewMode} onViewModeChange={setViewMode} />
       </div>
 
