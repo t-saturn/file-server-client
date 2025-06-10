@@ -1,5 +1,34 @@
 import type { Metadata } from 'next';
+import { Inter, Montserrat, Poppins, Victor_Mono } from 'next/font/google';
 import './globals.css';
+
+export const inter = Inter({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-inter',
+});
+
+export const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-montserrat',
+});
+
+export const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-poppins',
+});
+
+export const victorMono = Victor_Mono({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-victor-mono',
+});
 
 export const metadata: Metadata = {
   title: 'File Server',
@@ -8,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${victorMono.variable}`}>
       <body>{children}</body>
     </html>
   );
