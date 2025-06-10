@@ -8,7 +8,7 @@ interface ViewToggleProps {
   onViewModeChange: (mode: 'grid' | 'list') => void;
 }
 
-export function ViewToggle({ viewMode, onViewModeChange }: ViewToggleProps) {
+export const ViewToggle = ({ viewMode, onViewModeChange }: ViewToggleProps) => {
   return (
     <div className="flex border border-gray-300 rounded-lg overflow-hidden">
       <Button variant={viewMode === 'list' ? 'default' : 'ghost'} size="sm" className="rounded-none border-0" onClick={() => onViewModeChange('list')}>
@@ -19,4 +19,4 @@ export function ViewToggle({ viewMode, onViewModeChange }: ViewToggleProps) {
       </Button>
     </div>
   );
-}
+};

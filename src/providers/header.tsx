@@ -1,11 +1,14 @@
 'use client';
 
-import { Search, HelpCircle, Settings } from 'lucide-react';
+import { Search, HelpCircle, Settings, Moon, Sun } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useTheme } from './theme-rpovider';
 
 export const Header = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <header className="flex items-center justify-between px-4 py-2">
       <div className="flex items-center gap-4">
@@ -22,6 +25,9 @@ export const Header = () => {
       </div>
 
       <div className="flex items-center gap-2">
+        <Button variant="ghost" size="icon" className="rounded-full" onClick={toggleTheme} title={theme === 'light' ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'}>
+          {theme === 'light' ? <Moon className="w-5 h-5 text-ctext" /> : <Sun className="w-5 h-5 text-ctext" />}
+        </Button>
         <Button variant="ghost" size="icon" className="rounded-full">
           <HelpCircle className="w-5 h-5 text-ctext" />
         </Button>

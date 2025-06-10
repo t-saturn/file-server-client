@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Montserrat, Poppins, Victor_Mono } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/providers/theme-rpovider';
 
 export const inter = Inter({
   subsets: ['latin'],
@@ -38,7 +39,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${victorMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
