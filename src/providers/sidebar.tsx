@@ -33,12 +33,12 @@ export function Sidebar() {
       </div>
 
       <nav className="flex-1 px-2">
-        <div className="space-y-1">
+        <div className="flex flex-col py-1 gap-1">
           {menuItems.map((item) => (
             <Link key={item.id} href={item.href}>
               <Button
                 variant="ghost"
-                className={cn('w-full justify-start gap-3 h-10 px-3 rounded-full', activeSection === item.id && 'bg-blue-100 text-blue-700 hover:bg-blue-100')}
+                className={cn('w-full justify-start gap-3 h-10 px-3 rounded-full cursor-pointer', activeSection === item.id && 'bg-blue-100 text-blue-700 hover:bg-blue-100')}
               >
                 <item.icon className="w-5 h-5" />
                 {item.label}
@@ -47,12 +47,12 @@ export function Sidebar() {
           ))}
         </div>
 
-        <div className="mt-6 space-y-1">
+        <div className="flex flex-col pt-6 gap-1">
           {storageItems.map((item) => (
             <Link key={item.id} href={item.href}>
               <Button
                 variant="ghost"
-                className={cn('w-full justify-start gap-3 h-10 px-3 rounded-full', activeSection === item.id && 'bg-blue-100 text-blue-700 hover:bg-blue-100')}
+                className={cn('w-full justify-start gap-3 h-10 px-3 rounded-full cursor-pointer', activeSection === item.id && 'bg-blue-100 text-blue-700 hover:bg-blue-100')}
               >
                 <item.icon className="w-5 h-5" />
                 {item.label}
