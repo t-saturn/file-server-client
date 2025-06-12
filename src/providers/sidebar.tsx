@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 export function Sidebar() {
-  const pathname = usePathname(); // ejemplo: '/home/id_doc'
-  const activeSection = pathname.split('/')[1]; // 'home'
+  const pathname = usePathname();
+  const activeSection = pathname.split('/')[1];
 
   const menuItems = [
     { id: 'home', label: 'Página principal', icon: Home, href: '/home' },
@@ -26,7 +26,7 @@ export function Sidebar() {
   return (
     <div className="w-64 flex flex-col">
       <div className="p-4">
-        <Button className="w-full justify-start gap-3 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-full h-12">
+        <Button className="w-full justify-start gap-3 bg-white border border-csky/20 text-ctext hover:bg-csky/10  rounded-full h-12">
           <Plus className="w-5 h-5" />
           Nuevo
         </Button>
@@ -38,7 +38,7 @@ export function Sidebar() {
             <Link key={item.id} href={item.href}>
               <Button
                 variant="ghost"
-                className={cn('w-full justify-start gap-3 h-10 px-3 rounded-full cursor-pointer', activeSection === item.id && 'bg-blue-100 text-blue-700 hover:bg-blue-100')}
+                className={cn('w-full justify-start gap-3 h-10 px-3 rounded-full cursor-pointer hover:bg-csky/10 dark:hover:bg-csky/10', activeSection === item.id && 'bg-csky/20 text-cblue hover:bg-csky/30')}
               >
                 <item.icon className="w-5 h-5" />
                 {item.label}
@@ -52,7 +52,7 @@ export function Sidebar() {
             <Link key={item.id} href={item.href}>
               <Button
                 variant="ghost"
-                className={cn('w-full justify-start gap-3 h-10 px-3 rounded-full cursor-pointer', activeSection === item.id && 'bg-blue-100 text-blue-700 hover:bg-blue-100')}
+                className={cn('w-full justify-start gap-3 h-10 px-3 rounded-full cursor-pointer hover:bg-csky/10 dark:hover:bg-csky/10', activeSection === item.id && 'bg-csky/20 text-cblue hover:bg-csky/30')}
               >
                 <item.icon className="w-5 h-5" />
                 {item.label}
@@ -63,7 +63,7 @@ export function Sidebar() {
       </nav>
 
       <div className="p-4 border-t border-gray-200">
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-csubtext0">
           <div className="mb-2">536.2 MB de 20 GB en uso</div>
           <div className="w-full bg-gray-200 rounded-full h-1">
             <div className="bg-blue-500 h-1 rounded-full" style={{ width: '2.7%' }}></div>
