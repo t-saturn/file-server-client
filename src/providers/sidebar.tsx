@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { DividerItem, NavigationItem } from '@/types/sidebar';
 
-// Define SidebarItem type for navigation items and dividers
 type SidebarItem = NavigationItem | DividerItem;
 
 export function Sidebar() {
@@ -17,7 +16,6 @@ export function Sidebar() {
   const activeSection = pathname.split('/')[1];
   const [isExpanded, setIsExpanded] = useState(true);
 
-  // Navigation items configuration
   const items: SidebarItem[] = [
     { id: 'home', label: 'Página principal', icon: Home, href: '/home' },
     { id: 'recent', label: 'Recientes', icon: Clock, href: '/recent' },
@@ -29,14 +27,12 @@ export function Sidebar() {
     { id: 'quota', label: 'Almacenamiento', icon: HardDrive, href: '/quota' },
   ];
 
-  // Common button styles for navigation items
   const buttonStyles = cn(
     'w-full justify-start gap-3 h-10 px-3 rounded-full hover:bg-csky/10 dark:hover:bg-csky/10 cursor-pointer',
     'transition-[background-color,color] duration-300 ease-out',
     !isExpanded && 'justify-center'
   );
 
-  // Common styles for the toggle button
   const toggleButtonStyles = cn(
     'hidden md:flex p-2 rounded-full h-8 w-8 transition-[background-color,color] duration-300 ease-out',
     'bg-white/80 hover:bg-csky/10 border border-csky/10',
@@ -44,7 +40,6 @@ export function Sidebar() {
     'text-ctext hover:text-cblue'
   );
 
-  // Common styles for the "Nuevo" button
   const newButtonStyles = cn(
     'flex-1 justify-start gap-3 bg-white border border-csky/20 text-ctext hover:bg-csky/10 rounded-full h-12',
     'transition-[background-color,color] duration-300 ease-out',
@@ -54,7 +49,6 @@ export function Sidebar() {
   return (
     <TooltipProvider>
       <div className={cn('flex flex-col h-full transition-all duration-300', isExpanded ? 'w-64' : 'w-16')}>
-        {/* Header with toggle and new buttons */}
         <div className={cn('p-4 flex gap-2', isExpanded ? 'flex-row items-center' : 'flex-col')}>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -84,7 +78,6 @@ export function Sidebar() {
           </Tooltip>
         </div>
 
-        {/* Navigation menu */}
         <nav className="flex-1 px-2">
           <div className="flex flex-col gap-1">
             {items.map((item, index) =>
@@ -111,7 +104,6 @@ export function Sidebar() {
           </div>
         </nav>
 
-        {/* Storage information footer */}
         <div className={cn('p-4 border-t border-csky/10 flex flex-col gap-2 transition-all duration-300', !isExpanded && 'hidden')}>
           <div className="text-sm text-csubtext0 flex justify-between items-center">
             <span className="sm:hidden">536.2 MB / 20 GB</span>
