@@ -9,11 +9,11 @@ const Sidebar = dynamic(() => import('./sidebar').then((mod) => mod.Sidebar), { 
 export const SidebarProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <FileProvider>
-      <div className="h-full w-full flex flex-col">
+      <div className="h-screen flex flex-col bg-ccrust pr-2">
         <Header />
         <div className="flex flex-1 overflow-hidden">
           <Sidebar />
-          <div className="flex-1 overflow-auto pr-2">{children}</div>
+          <div className="flex-1 overflow-auto">{children}</div>
         </div>
       </div>
     </FileProvider>

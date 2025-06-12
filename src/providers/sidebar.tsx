@@ -34,7 +34,7 @@ export function Sidebar() {
 
   const buttonStyles = cn('w-full h-10 px-3 rounded-full hover:bg-csky/10', isExpanded ? 'justify-start gap-3' : 'justify-center');
 
-  const toggleButtonStyles = cn('flex p-2 shadow-none rounded-full h-8 w-8 bg-ccrust hover:bg-crust text-ctext hover:text-cblue sidebar-trigger', isExpanded && 'order-last');
+  const toggleButtonStyles = cn('flex p-2 rounded-full h-8 w-8 bg-ccrust hover:bg-crust text-ctext hover:text-cblue sidebar-trigger', isExpanded && 'order-last');
 
   const newButtonStyles = cn('flex-1 h-12 rounded-full bg-csky/10 hover:bg-csky/20 text-ctext', isExpanded ? 'justify-start gap-3' : 'justify-center');
 
