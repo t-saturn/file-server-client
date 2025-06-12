@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Plus, Home, Clock, Users, HardDrive, Share2, Trash2, PanelLeft, PanelRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -13,7 +13,13 @@ type SidebarItem = NavigationItem | DividerItem;
 export function Sidebar() {
   const pathname = usePathname();
   const activeSection = pathname.split('/')[1];
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(typeof window !== 'undefined' && window.innerWidth >= 640);
+
+  useEffect(() => {
+    const handleResize = () => setIsExpanded(window.innerWidth >= 640);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const items: SidebarItem[] = [
     { id: 'home', label: 'Página principal', icon: Home, href: '/home' },
@@ -28,7 +34,7 @@ export function Sidebar() {
 
   const buttonStyles = cn('w-full h-10 px-3 rounded-full hover:bg-csky/10', isExpanded ? 'justify-start gap-3' : 'justify-center');
 
-  const toggleButtonStyles = cn('hidden md:flex shadow-none p-2 rounded-full h-8 w-8 bg-ccrust hover:bg-crust text-ctext hover:text-cblue sidebar-trigger', isExpanded && 'order-last');
+  const toggleButtonStyles = cn('flex p-2 shadow-none rounded-full h-8 w-8 bg-ccrust hover:bg-crust text-ctext hover:text-cblue sidebar-trigger', isExpanded && 'order-last');
 
   const newButtonStyles = cn('flex-1 h-12 rounded-full bg-csky/10 hover:bg-csky/20 text-ctext', isExpanded ? 'justify-start gap-3' : 'justify-center');
 

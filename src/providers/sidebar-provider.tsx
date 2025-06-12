@@ -1,8 +1,10 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { FileProvider } from '@/contexts/file-context';
 import { Header } from './header';
-import { Sidebar } from './sidebar';
+
+const Sidebar = dynamic(() => import('./sidebar').then((mod) => mod.Sidebar), { ssr: false });
 
 export const SidebarProvider = ({ children }: { children: React.ReactNode }) => {
   return (
