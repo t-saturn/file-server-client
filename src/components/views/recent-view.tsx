@@ -5,10 +5,11 @@ import { ViewToggle } from '@/providers/view-toogle';
 import { FileList } from '../file/file-list';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FileGrid } from '../file/file-grid';
 
 export function FilterBar() {
   return (
-    <div className="flex gap-4 mb-6">
+    <div className="grid grid-cols-2 lg:flex lg:flex-row gap-4 justify-start py-4">
       <Button variant="outline" className="gap-2">
         Tipo
         <ChevronDown className="w-4 h-4" />
@@ -35,12 +36,14 @@ export function RecentView() {
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-medium text-gray-900">Recientes</h1>
+        <h1 className="text-2xl font-medium text-ctext">Recientes</h1>
         <ViewToggle viewMode={viewMode} onViewModeChange={setViewMode} />
       </div>
 
       <FilterBar />
-      <FileList showTimeGroups />
+
+      {viewMode === 'grid' ? <FileGrid /> : <FileList showTimeGroups />}
+
     </div>
   );
 }

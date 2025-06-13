@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 
 export const FilterBar = () => {
   return (
-    <div className="flex gap-4 mb-6">
+    <div className="grid grid-cols-2 lg:flex lg:flex-row gap-4 justify-start py-4">
       <Button variant="outline" className="gap-2">
         Tipo
         <ChevronDown className="w-4 h-4" />
@@ -42,6 +42,7 @@ export const MyDriveView = () => {
       </div>
 
       <FilterBar />
+
       {viewMode === 'grid' ? <FileGrid /> : <FileList />}
     </div>
   );

@@ -12,10 +12,10 @@ export function FileGrid() {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
       {files.slice(0, 12).map((file) => (
         <div key={file.id} className="group relative">
-          <div className="bg-white border rounded-md p-3 sm:p-4 hover:shadow-md transition-shadow cursor-pointer">
+          <div className="bg-card border rounded-md p-3 sm:p-4 hover:shadow-md transition-shadow cursor-pointer">
             <div className="flex flex-col items-center text-center">
               <FileIcon type={file.type} className="w-10 h-10 sm:w-12 sm:h-12 mb-1 sm:mb-2" />
-              <div className="text-xs sm:text-sm font-medium text-gray-900 truncate w-full">{file.name}</div>
+              <div className="text-xs sm:text-sm font-medium text-foreground truncate w-full">{file.name}</div>
             </div>
           </div>
           <Button
