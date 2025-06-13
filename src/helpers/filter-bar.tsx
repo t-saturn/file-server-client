@@ -17,7 +17,7 @@ interface FilterBarProps {
 
 export const FilterBar = ({ options, onSelect }: FilterBarProps) => {
   return (
-    <div className="flex flex-row gap-4 justify-center items-center">
+    <div className="grid grid-cols-2 lg:flex lg:flex-row gap-4 justify-center">
       {options.map((group) => (
         <IconSelectButton key={group.key} config={group} onSelect={onSelect} />
       ))}

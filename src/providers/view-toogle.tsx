@@ -10,7 +10,7 @@ interface ViewToggleProps {
 
 export const ViewToggle = ({ viewMode, onViewModeChange }: ViewToggleProps) => {
   return (
-    <div className="flex border border-gray-300 rounded-lg overflow-hidden">
+    <div className="flex border border-card rounded-lg overflow-hidden">
       <Button variant={viewMode === 'list' ? 'default' : 'ghost'} size="sm" className="rounded-none border-0" onClick={() => onViewModeChange('list')}>
         <List className="w-4 h-4" />
       </Button>

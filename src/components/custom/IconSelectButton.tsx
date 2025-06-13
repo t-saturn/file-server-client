@@ -26,7 +26,7 @@ interface IconSelectButtonProps {
 export const IconSelectButton = ({ config, onSelect }: IconSelectButtonProps) => {
   if (config.options.length === 0) {
     return (
-      <Button variant="custom_rounded" className="gap-2">
+      <Button variant="custom_rounded" className="gap-2 text-xs sm:text-sm">
         <Icon iconNode={config.icon} />
         {config.label}
         <ChevronDown className="w-4 h-4" />
@@ -37,10 +37,10 @@ export const IconSelectButton = ({ config, onSelect }: IconSelectButtonProps) =>
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="custom_rounded" className="gap-2">
+        <Button variant="custom_rounded" className="gap-2 text-xs sm:text-sm">
           <Icon iconNode={config.icon} className="w-4 h-4" />
           {config.label}
-          <ChevronDown className="w-4 h-4 ml-auto" />
+          <ChevronDown className="w-4 h-4" />
         </Button>
       </DropdownMenuTrigger>
 

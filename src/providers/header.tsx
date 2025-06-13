@@ -10,7 +10,7 @@ export const Header = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="flex items-center justify-between px-4 py-2">
+    <header className="flex items-center justify-between px-4 py-2 w-full">
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
           <span className="text-3xl text-ctext capitalize font-bold font-text">archivos</span>

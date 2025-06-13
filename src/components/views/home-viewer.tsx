@@ -37,15 +37,15 @@ export function HomeView() {
   ];
 
   return (
-    <div className="p-6">
-      <div className="text-center mb-8">
-        <h1 className="text-2xl text-gray-700 mb-4">t-saturn, bienvenido de nuevo!</h1>
+    <div className="flex flex-col p-4 sm:p-6 max-w-screen-2xl mx-auto gap-4">
+      <div className="text-center mb-2 sm:mb-4">
+        <h1 className="text-xl sm:text-2xl text-ctext mb-4">t-saturn, bienvenido de nuevo!</h1>
       </div>
 
       <FilterBar options={optionGroups} onSelect={setSelected} />
 
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-lg font-medium text-csubtext1">Archivos sugeridos</h2>
+      <div className="flex flex-row justify-between mb-2 sm:mb-4 gap-4 items-center">
+        <h2 className="text-base text-center sm:text-start sm:text-lg font-medium text-csubtext1">Archivos sugeridos</h2>
         <ViewToggle viewMode={viewMode} onViewModeChange={setViewMode} />
       </div>
 
